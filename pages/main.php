@@ -1,5 +1,10 @@
-<div class="maincontent">
-	<ul>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+  <h1 class="display-3">Hello!</h1>
+  <p class="lead">Here you can find information about the mountains.</p>
+</div>
+<div class="container">
+  <div class="row">
 		<? 
 			$connect = mysql_connect(localhost, root, '');
 			$select_db = mysql_select_db('articles web-site');
@@ -10,24 +15,23 @@
 
 			while($result = mysql_fetch_array($select))
 			{
+				$preview = previewText($result[content]);
 				echo "
-
-				<li>
-					<img src='$result[previewimage]'></br>
-					<h4 align='center'>$result[title]</h4></br>
-					<p align='justify'>$result[content]</p></br>
-					<nav align='right' style='margin-right: 10px;margin-bottom: 10px;'><button>���������</button></nav>
-				</li>
+				<div class='col-sm-6 col-lg-3'>
+					<img class='card-img-top' alt='Card header image' src='$result[previewimage]'></br>
+					<h5 align='center' class='card-title'>$result[title]</h5>
+					<p class='card-text'>$preview</p></br>
+					<a href='#' class='btn btn-info'>���������</a>
+				</div>
 				";
 			}
-
 		?>
-		<li>
-			1</br>
-			<img src="images/img1.jpg"></br>
-			<h4 align="center">Горы 1</h4></br>
-			<p align='justify'>Оооочень много текставыфовфлдывлывыфлдвоыфлдвоыфлдвоы флдыфвфывыфвфвыффвфыовлдф</p></br>
-			<nav align='right' style='margin-right: 10px;margin-bottom: 10px;'><button>Кнопка</button></nav>
-		</li>
-	</ul>
+	</div>
 </div>
+<? 
+	function previewText($text) 
+	{
+		$text = mb_substr($text, 0, 80).'...';
+		return $text;
+    }
+?>
