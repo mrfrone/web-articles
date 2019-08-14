@@ -13,7 +13,7 @@ a
   text-decoration: none;
   font-family: 'Lora', serif;
 }
-.menu div 
+.menu nav
 {
   display: block;
   width: 100%;
@@ -43,5 +43,32 @@ a
 }
 .menu i
 {
-	float: left;
+	float: right;
+}
+
+div.maincontent
+{
+	width:90%;
+	margin-top:2%;
+	margin-left: 10%;
+}
+.maincontent ul
+{
+  overflow: hidden;
+  padding: 0;
+}
+.maincontent li
+{
+	width:15%;
+  	float: left;
+  	background: green;
+}
+.maincontent li img
+{
+	width:100%;
+}
+.maincontent li p
+{
+	width:100%;
+	margin:5px;
 }
