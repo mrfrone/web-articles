@@ -4,6 +4,8 @@
 <html>
 <head>
 <title>web-articles</title>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link type='text/css' rel='stylesheet' href='style.css'>
 </head>
 <body>
 <header>
