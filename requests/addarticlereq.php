@@ -22,9 +22,13 @@ if (isset($_POST['title']) && isset($_POST['info']))
 
     mysql_query("SET NAMES 'cp1251'");
 
-    echo "'$title', '$uploadfile', '$info'";
+    mysql_query("INSERT INTO `articles` 
+    (`num`, `title`, `previewimage`, `content`) 
+    VALUES 
+    (NULL, '$title', '$uploadtobase', '$info');");  
 
-    mysql_query("INSERT INTO `articles` (`num`, `title`, `previewimage`, `content`) VALUES (NULL, '$title', '$uploadtobase', '$info');");  
+    echo "<h3>Данные успешно добавлены.</h3>";
+    echo "<a href='http://web-articles.ru/'>Перейти на сайт...</a>";
 }
 else
 {

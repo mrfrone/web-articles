@@ -1,5 +1,9 @@
 <?
 	$page = $_GET['page'];
+	$connect = mysql_connect(localhost, root, '');
+	$select_db = mysql_select_db('articles web-site');
+
+	mysql_query("SET NAMES 'cp1251'");
 ?>
 <html>
 <head>
